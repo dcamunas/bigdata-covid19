@@ -1,0 +1,17 @@
+<iic-com:InversionesFinancierasValor 
+  xmlns:iic-com="http://www.cnmv.es/iic/com/1-2009/2009-03-31" 
+  xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+  xmlns:iic-fim="http://www.cnmv.es/iic/fim/1-2009/2009-03-31" 
+  xmlns:iic-ges="http://www.cnmv.es/iic/ges/1-2009/2009-03-31" 
+  xmlns:dgi-lc-es="http://www.xbrl.org.es/es/2008/dgi/gp/lc-es/2008-01-30" 
+  xmlns:dgi-est-gen="http://www.xbrl.org.es/es/2008/dgi/gp/est-gen/2008-01-30" 
+  xmlns:xbrll="http://www.xbrl.org/2003/linkbase" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:dgi-lc-int="http://www.xbrl.org.es/es/2008/dgi/gp/lc-int/2008-01-30" 
+  xmlns:iic-com-fon="http://www.cnmv.es/iic/mep/1-2009/2009-03-31" 
+  xmlns:dgi-types="http://www.xbrl.org.es/es/2008/dgi/gp/types/2008-01-30" 
+  xmlns:iso4217="http://www.xbrl.org/2003/iso4217" 
+  contextRef="Anexo1_4190_S1_2019_ipy" 
+  decimals="2" 
+  unitRef="EUR">13031000
+</iic-com:InversionesFinancierasValor>

@@ -1,0 +1,26 @@
+<xs:element name="CommunicationWays">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CommunicationType">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" 
+                        xmlns:q1="http://www.xbrl.org.es/es/
+                        2008/dgi/gp/lc-int/2008-01-30" 
+                        ref="q1:Xcode_UN3155.EM" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="CommunicationValue">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="contextRef" 
+                            type="xs:string" use="optional" />
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>

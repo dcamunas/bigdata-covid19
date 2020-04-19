@@ -1,0 +1,43 @@
+\begin{thebibliography}{10}
+
+\bibitem{basex}
+\url{http://basex.org/}.
+\newblock Basex.
+
+\bibitem{intro_xml}
+\url{https://developer.mozilla.org/es/docs/Web/XML/Introduccion_a_XML}.
+\newblock Introducción a xml.
+
+\bibitem{xslt}
+\url{https://es.wikipedia.org/wiki/Extensible_Stylesheet_Language_Transformations}.
+\newblock Transformaciones xsl.
+
+\bibitem{def_fondo}
+\url{https://es.wikipedia.org/wiki/Fondo_de_inversión}.
+\newblock Definición fondo de inversión.
+
+\bibitem{xml_schema}
+\url{https://es.wikipedia.org/wiki/XML_Schema}.
+\newblock Xml schema.
+
+\bibitem{fondo}
+\url{https://www.cnmv.es/portal/Consultas/IIC/Fondo.aspx?nif=V81726200&vista=1&fs=12/04/2020}.
+\newblock Bbva bolsa usa, fi.
+
+\bibitem{liquid_studio}
+\url{https://www.liquid-technologies.com/}.
+\newblock Liquid studio 2020.
+
+\bibitem{gen_xslt}
+\url{https://www.w3schools.com/xml/tryxslt.asp?xmlfile=cdcatalog&xsltfile=cdcatalog_ex2}.
+\newblock Generar xslt.
+
+\bibitem{xsl_valueof}
+\url{https://www.w3schools.com/xml/xsl_value_of.asp}.
+\newblock Xsl value of.
+
+\bibitem{xml}
+\url{https://www.xml.com/}.
+\newblock Xml.
+
+\end{thebibliography}
