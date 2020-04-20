@@ -18,7 +18,7 @@
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
-\usepackage{float} % Permite usar H para colocar las imagenes
+
 
 \documentclass[11pt]{diazessay} % Font size (can be 10pt, 11pt or 12pt)
 \usepackage{listings}
@@ -91,37 +91,24 @@
 \newpage
 \section*{Introducción}
 
-XML \cite{xml} es un lenguaje de marcado similar a HTML. Significa \textit{Extensible Markup Language} (Lenguaje de Marcado Extensible) y es una especificación de W3C como lenguaje de marcado de propósito general. Esto significa que, a diferencia de otros lenguajes de marcado, XML no está predefinido, por lo que debes definir tus propias etiquetas. El propósito principal del lenguaje es compartir datos a través de diferentes sistemas, como Internet \cite{intro_xml}.\\
+El \textbf{Big Data} (\textit{macrodatos, datos masivos, inteligencia de datos}), se conoce como el análisis masivo de datos. Esto es una cantidad de datos tan sumamente grande, que las aplicaciones que se dedicaban al  procesamiento de datos que tradicionalmente se venían usando no son capaces de tratar y poner en valor en un tiempo razonable. Este  término ha estado en uso desde la década de 1990.\\
 
-En nuestro caso, hemos construido una base de datos de forma nativa desde un archivo de tipo \textit{XML}. En la cual se almacena toda la información relacionada con el primer semestre de 2019 del fondo de inversión BBVA BOLSA USA, FI \cite{fondo}. Un fondo de inversión es una institución de inversión colectiva (IIC), que consiste en reunir fondos de distintos inversores, naturales o jurídicos, para invertirlos en diferentes instrumentos financieros, su responsabilidad se delega a una sociedad administradora que puede ser un banco o empresa de servicios de inversión \cite{def_fondo}. En nuestro caso la sociedad administradora es el banco BBVA y el regulador es la Comisión Nacional del Mercado de Valores (CNMV).\\
+Este término tambien hace referencia, a las nuevas tecnologías que hacen posible el almacenamiento y procesamiento de datos, además del uso que se hace de la información obtenida a través de ellas.
 
-Para generar el \textit{XML Schema} hemos empleado la herramienta \textit{Liquid Studio 2020} \cite{liquid_studio} y para realizar las correspondientes consultas y visualizar la base de datos hemos utilizado \textit{Basex} \cite{basex}. En cuanto a la generación de una transformación hemos utilizado una herramienta online de \textit{W3Schools} \cite{gen_xslt}.
+
 \newpage
+\section*{Tipos de datos que existen}
+A continuación, se dará una breve explicación de los tipos de datos existentes, y de los cuales hace uso esta tecnología (\textbf{\textit{Big Data}}).\\
 
-\section*{Creación de la base de datos}
-Para llevar a cabo la creación de la base de datos, se ha utilizado la herramienta anteriormente nombrada \textit{\textbf{BaseX}} \cite{basex}, que actúa como gestor de la base de datos. A partir del archivo \textit{XML} (\textit{Semestre1-BBVA.xml}), el cual contiene toda la información anteriormente explicada.\\
+\subsection*{Datos estruturados}
+Estos se suelen usar en el tratamiento de datos. Ya que sus principales características son que pueden ser almacenados en tablas, y que tienen definido su formato.\\
+Algunos datos de este tipo son:
 
-
-A continuación se mostrará imágenes de la herramienta BaseX, y de como trata esta la información de nuestra base de datos.
-
-\begin{figure}[h!]
-	\includegraphics[width=\linewidth]{interfaz1.PNG}
-	\centering
-	\caption{Interfaz de  BaseX}
-	\label{fig:app}
-\end{figure}
-
-Se puede observar las múltiples de opciones que tiene esta herramienta, como es la representación de los nodos, el resultado de introducir la consulta, donde se muestra la estructura que tiene cada nodo que forma la BD, etc.
-
-\begin{figure}[h!]
-	\includegraphics[width=70mm]{datos.PNG}
-	\centering
-	\caption{Información principal de nuestra base de datos}
-	\label{fig:data-app}
-\end{figure}
-
-Como se puede observar BaseX nos ofrece todo tipo de información, como el nombre, tamaño, número de nodos (preguntas en nuestro caso) que tiene la BD, localización dentro de nuestro servidor, etc.
-
+\begin{itemize}
+	\item \textbf{Números.}
+	\item \textbf{Cadenas de caracteres.}
+	\item \textbf{Fechas.}
+\end{itemize}
 
 \newpage
 \section*{XML Schema}
