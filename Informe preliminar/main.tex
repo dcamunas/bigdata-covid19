@@ -54,7 +54,7 @@
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\title{\textbf{Ejemplos de casos en el Biga Data \\ Informe preliminar}} % Title and subtitle
+\title{\textbf{Ejemplos de casos en el Big Data \\ Informe preliminar}} % Title and subtitle
 
 \author{\textbf{Bases de Datos Avanzadas} \\ \textit{Escuela Superior Informática (UCLM)}} % Author and institution
 
@@ -91,17 +91,14 @@
 \newpage
 \section*{Introducción}
 
-El \textbf{Big Data} (\textit{macrodatos, datos masivos, inteligencia de datos}), se conoce como el análisis masivo de datos. Esto es una cantidad de datos tan sumamente grande, que las aplicaciones que se dedicaban al  procesamiento de datos que tradicionalmente se venían usando no son capaces de tratar y poner en valor en un tiempo razonable. Este  término ha estado en uso desde la década de 1990.\\
+El \textbf{Big Data} (\textit{macro datos, datos masivos, inteligencia de datos}), se conoce como el análisis masivo de datos. Esto es una cantidad de datos tan sumamente grande, que las aplicaciones que se dedicaban al  procesamiento de datos que tradicionalmente se venían usando no son capaces de tratar y poner en valor en un tiempo razonable. Este  término ha estado en uso desde la década de \textit{1990}.\\
+Este término también hace referencia, a las nuevas tecnologías que hacen posible el almacenamiento y procesamiento de datos, además del uso que se hace de la información obtenida a través de ellas.\\
 
-Este término tambien hace referencia, a las nuevas tecnologías que hacen posible el almacenamiento y procesamiento de datos, además del uso que se hace de la información obtenida a través de ellas.
+\subsection*{Tipos de datos que existen}
+A continuación, se dará una breve explicación de los tipos de datos existentes, y de los cuales hace uso esta tecnología (\textbf{\textit{Big Data}}).
 
-
-\newpage
-\section*{Tipos de datos que existen}
-A continuación, se dará una breve explicación de los tipos de datos existentes, y de los cuales hace uso esta tecnología (\textbf{\textit{Big Data}}).\\
-
-\subsection*{Datos estruturados}
-Estos se suelen usar en el tratamiento de datos. Ya que sus principales características son que pueden ser almacenados en tablas, y que tienen definido su formato.\\
+\subsubsection*{Datos estructurados}
+Este tipo de datos se suelen usar en el tratamiento de datos. Ya que sus principales características son que pueden ser almacenados en tablas, y que tienen definido su formato.\\
 Algunos datos de este tipo son:
 
 \begin{itemize}
@@ -110,187 +107,73 @@ Algunos datos de este tipo son:
 	\item \textbf{Fechas.}
 \end{itemize}
 
+\subsubsection*{Datos semiestructurados}
+Los \textbf{\textit{datos semiestructurados}} tienen una tipo de estructura, pero esta no es lo suficientemente regular, como para permitir su gestión y estructuración como si fuese similar a los datos estructurados.
+Este tipo de datos, posee ciertos patrones comunes que lo describen y dan información sobre las relaciones entre los mismos.\\
+Un ejemplo de utilización, sería el lenguaje de marcas \textit{HTML}, el cual sirve para el desarrollo de paginas web, donde estas pautas son representadas por su sistema de etiquetas.
+
+\subsubsection*{Datos no estructurados}
+Este tipo de datos, se trata  de datos que han sido obtenidos en su formato original. Estos no se encuentran especificados en ningún formato, el cual permita que sean almacenados como se almacenarían los anteriores tipos de datos (\textit{estructurados} y \textit{semiestructurados}). Ya que no disponen de una estructura definida (longitud, formato, etc) para poder desglosar la información.\\
+Estos datos se pueden encontrar, por ejemplo: en presentaciones (\textit{PowerPoints}), correos, documentos de texto \textit{(Word, PDF, documentos de google}, etc).
+
+
+
 \newpage
-\section*{XML Schema}
-\textit{XML Schema} es un lenguaje utilizado para describir la estructura y las restricciones de los contenidos de los documentos XML de una forma muy precisa y explícita, más allá de las normas sintácticas impuestas por el propio lenguaje XML \cite{xml_schema}. \\
+\section*{Características principales}
+Las características principales del \textit{\textbf{Big Data}} en este caso son \textbf{siete}, también son conocidas como las \textit{"V" del Big Data}. Este nombre se debe a que las siete características comienzan por la letra "V".\\ 
+Estas son las siguientes:
 
-Como se ha mencionado anteriormente el esquema XML lo hemos generado con la herramienta \textit{Liquid Studio}. El resultado han sido un total de nueve archivos y dada la complejidad del esquema resultante no hemos incluido en la memoria los esquemas. Aunque, estos se pueden visualizar en forma de imagen y en formato \textit{xsd} en los archivos de\textit{XML-Schema} del entregable.\\
+\begin{enumerate}
+	\item \textbf{Valor}: A la hora de extraer una gran cantidad de datos, frecuentemente se extrae algo de valor entre ellos. La pregunta que se hacen en este ambito, es como extraer con mas frecuencia y de manera eficiente, el valor de los datos. Ya que el valor es sin duda una cualidad fundamental en su análisis.
+	
+	\item \textbf{Velocidad}: La velocidad es algo fundamental en este ámbito, ya que es necesario que la información sea captada al instante. Ya que por ejemplo, si se quiere captar una serie de noticias, y en cambio estas no llegan hasta un tiempo sobrepasado. Esto puede hacer que pierden valor e interés. Por ello cada vez los algoritmos que se encargan de captar la información cada vez son mas rápidos y trabajan en tiempo real, a la vez esto hace que estos tipos de algoritmos sean más complejos.
+	
+	\item \textbf{Variabilidad}: En este ámbito (de los \textit{macro datos}), la información varía de forma constante. Es por ello que también varían bastante los mecanismos de tratamientos de datos, ya que estos no pueden ser fijos, y necesitan un control periódico.
+	
+	\item \textbf{Variedad}: ya que los datos son captados desde diversas fuentes y también se encuentran en distintos formatos. Además la proporción de datos no estructurados en cuanto a los estructurados (\textit{tradicionales}), cada vez es mayor. Por tanto, esto provoca la necesidad de utilizar nuevas tecnologías de tratamiento de datos.
+	
+	\item \textbf{Visualización}:Por ejemplo, convertir cientos de archivos de información en un único gráfico, que muestre de forma clara una serie de conclusiones o resúmenes, de los tipos de datos e información captada.
+	
+	\item \textbf{Volumen}: Dado que la cantidad de datos generados esta evolucionando de una forma exponencial, esto provoca ue crezcan las bases de datos, y al igual las aplicaciones que se encargan de captar esa información previamente. Como respuesta a estos cambios, se han reducido los costes de almacenamiento.
+	
+	\item \textbf{Veracidad}: Saber la veracidad de la información que se ha recogido, es algo fundamental para obtener unos datos de \textit{\textbf{calidad}}.  Esta característica puede influir en gran parte en conseguir ventajas competitivas dentro del ámbito del \textit{Big Data}.
+\end{enumerate}
 
-A continuación se mostrará un ejemplo sencillo, en este caso sobre el esquema del elemento \textit{CommunicattionWays}, el cual forma parte (es un subelemento) del elemento \textit{InformeFIM}.\\
 
-El elemento \textbf{CommunicattionWays}, esta formado por dos subelementos, los cuales son: \textit{CommunicattionType} indica el tipo de comunicación que se lleva a cabo, y \textit{CommunicattionValue} indica en este caso que el valor sera almacenado en un atributo de tipo String. Se puede observar su representación en la Figura \ref{fig:ejemplo_xsd}\\
+\newpage
+\section*{Ciclo de gestión de información}
+El ciclo de gestión de información del \textit{\textbf{Big Data}}, es el siguiente:
 
-\begin{figure}[h!]
-	\includegraphics[width=\linewidth]{ejemplo-xsd.png}
-	\caption{Representación Schema XML del elemento \textit{CommunicattionWays}}
-	\label{fig:ejemplo_xsd}
-\end{figure}
-
-
-Donde el código fuente del respectivo archivo de tipo \textit{\textbf{XSD}} sería el siguiente:\\
-
-\lstinputlisting[language=XML]{code/ejemplo.xsd} 
-
---------------------------------------------------------------------------------------------------\\
-
-\subsection*{Estructura de un elemento de la base de datos}
-La estructura de los tipos de \textbf{elementos} que forman esta base de datos, es la \textit{básica}, dado que cada elemento consta de sus distintos tipos de atributos que lo forman. La peculiraridad que tiene es que, podemos encontrar elementos formando otros elementos, a estos tipos se les llama \textbf{subelementos}.\\
-Esto se debe a una relación de \textit{herencia} entre el elemento principal y los distintos subelementos que lo forman. Tambien cabe destacar, que cada subelemento, puede tener sus propios atributos.
-
-En la Figura \ref{fig:estructura} se puede apreciar mejor esta explicación.
+\begin{enumerate}
+	\item \textbf{Captura de información}: Existen varios métodos, como: Web Scraping, esta es una técnica que durante programas que extraen información de sitios Web. Y la gestión de información con diversas APIs.
+	
+	\item \textbf{Almacenamiento}: Dependiendo de lo que se tenga pensado optar, se puede optar desde archivos de hojas de cálculo hasta sistemas NoSQL. Estos sistemas permiten el almacenamiento de información no estructurada, de una forma rápida y flexible.
+	
+	\item \textbf{Tratamiento}: Una vez que los datos han sido capturados y almacenados, deben de ser tratados. Este proceso dependerá del tipo de información y de su uso. Se puede extraer patrones de ellos mediante la utilización del \textit{\textbf{machine learning}}, esto es el desarrollo de diversas técnicas que tienen como finalidad que las maquinas basen su comportamiento en base a ejemplos que se les agencian. Todo ello mediante lenguajes de programación como \textit{R} y \textit{Python}.
+	
+	\item \textbf{Puesta en valor}: Los datos solo garantizan conocimiento cuando han sido analizados y tratados de forma adecuada. Esto hace que el valor no se encuentre en los propios datos, si no en la relación que hay entre estos.\\
+	Esta relación es la que permite extraer patrones, los cuales forman el conocimiento en todo tipo de ámbitos. Por ejemplo, el valor pude ser una visualización a partir de un grafico, donde se lleve a cabo un análisis.\\
+	Por lo tanto, con esto nos referimos a algo que realmente de sentido a todo el proceso que se ha llevado a cabo hasta llegar aquí.
+\end{enumerate}
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=110mm]{Estructura.png}
-	\caption{Estructura de un elemento}
-	\label{fig:estructura}
-\end{figure}
-
-
-Como se puede observar, por ejemplo dentro del elemento \textit{InformeFIM}, encontramos el elemento \textit{DatosFondoCompartimentoFIM}, que a la vez este esta formado por los elementos \textit{DatosEconomicosFIM} y \textit{InversionesFinancierasFIM}, cada uno con sus multiples atributos y subelementos que lo forman.
-
-
-\newpage
-\section*{Transformación XSL}
-En esta sección vamos a ver un ejemplo sencillo de transformación \textit{XSL}, (ya que la tranformación de la base de datos de forma completa es bastante complejo).\\ Transformando un elemento de los que esta formada nuestra base de datos que hemos visto en la sección anterior a un \textit{HTML} sencillo. \\
-
-Las transformaciones \textit{XSL} o \textit{XSLT} es un estándar de la organización W3C que presenta una forma de transformar documentos XML en otros archivos del mismo o distinto formato. Los archivos XSLT realizan la transformación del documento utilizando una o varias reglas de plantilla.\\
-
-Estas reglas de plantilla unidas al documento fuente a transformar alimentan un procesador de XSLT, que realiza las transformaciones deseadas poniendo el resultado en un archivo de salida, o, como en el caso de una página web, las hace directamente en un dispositivo de presentación tal como el monitor del usuario \cite{xslt}.\\
-
-Para realizar esta transformación hemos creado un nuevo archivo xml a partir del original, en el cual hemos incluido una parte de la etiqueta \textit{InformeFIM}. Además de esto, hemos modificado las etiquetas, haciéndolas más sencillas, porque la transformación no se realizaba correctamente con las etiquetas originales. El código xml utilizado para la transformación se puede observar en el siguiente listado:\\
-
-\lstinputlisting[language=XML]{code/ejemplo_xsl.xml} 
----------------------------------------------------------------------------------------------------------\\
-
-La transformación  creada se puede apreciar en el siguiente listado:
-\lstinputlisting[language=XML]{code/ejemplo_xsl.xslt} 
----------------------------------------------------------------------------------------------------------\\
-
-La idea de este código es construir un \textit{HTML} para mostrar algunos elementos relevantes del informe del fondo de inversión, para ello se hace uso de elementos \textit{HTML} y de la función \textit{XSL, value-of select=""}. Esta función selecciona un elemento del XML que se desea convertir, indicándole la ruta a seguir dentro de las etiquetas \cite{xsl_valueof}. El resultado en \textit{HTML} de la trasformación se puede apreciar en la figura \ref{fig:xslt_result}.\\
-
-\begin{figure}[h!]
-	\includegraphics[width=\linewidth]{resultado-xslt.PNG}
-	\caption{Resultado de la transformación XSL}
-	\label{fig:xslt_result}
+	\includegraphics[width=\linewidth]{ciclo.jpg}
+	\caption{Representación ciclo de vida del \textit{dato}.}
+	\label{fig:ciclo-dato}
 \end{figure}
 
 
 \newpage
-\section*{Ejemplos de consulta}
-Uno de los principales objetivos de estas consultas, es la comprobación de que nuestra base de datos funciona de forma correcta, debido a que con una serie de consultas, se puede observar que nuestra base de datos ha almacenado de forma correcta (estructura, formato...) los datos que componen la información. 
+\section*{Ejemplos de casos en el Big Data}
+A continuación, se nombrarán algunos casos de éxito y de fracaso dentro del ámbito del \textit{\textbf{Big Data}}.\\
 
-En nuestro caso cada nodo o elemento por el que esta formada la base de datos es distinta información sobre el primer semestre de este banco, la cual los atributos que la forman son los explicados anteriormente en el apartado anterior.\\
+\subsection*{Casos de éxito:}
 
-A continuación se mostrarán una serie de consultas realizadas a nuestra base de datos, junto con su resultado.
-
-\subsection*{Devolver toda la información de los datos económicos del FIM}
-\subsubsection*{Consulta}
-	\lstset{language=C}
-\begin{lstlisting}
-for $i in xbrl/InformeFIM/DatosFondoCompartimentoFIM
-return $i/DatosEconomicosFIM`
-\end{lstlisting}
-	
-\subsubsection*{Resultado}
-\lstinputlisting[language=XML]{code/consulta1.xml} 
----------------------------------------------------------------------------------------------------------\\
-
-
-\subsection*{Devolver todas los datos sobre las Comparativas de rentabilidad media}
-\subsubsection*{Consulta}
-\begin{itemize}
-	\item \textbf{En XQuery}:
-	\lstset{language=C}
-	\begin{lstlisting}
-	for $i in xbrl/ComparativaRentabilidadMedia
-	return $i
-	\end{lstlisting}
-	
-	\item \textbf{En XPath}:
-	\lstset{language=C}
-	\begin{lstlisting}
-	xbrl/ComparativaRentabilidadMedia
-	\end{lstlisting}
-\end{itemize}
-
-\subsubsection*{Resultado}
-\lstinputlisting[language=XML]{code/consulta2.xml} 
----------------------------------------------------------------------------------------------------------\\
-
-\subsection*{Devolver el valor de las inversiones financieras al exterior}
-\subsubsection*{Consulta}
-\lstset{language=C}
-\begin{lstlisting}
-for $i in xbrl/InversionesFinancieras/InversionesFinancierasValorEstimado/
-InversionesFinancierasExterior
-return $i/InversionesFinancierasValor
-\end{lstlisting}
-
-\subsubsection*{Resultado}
-\lstinputlisting[language=XML]{code/consulta3.xml} 
----------------------------------------------------------------------------------------------------------\\
-
-\subsection*{Devolver el valor de una inversión financiera en el exterior (la obtendremos por su identificador)}
-\subsubsection*{Consulta}
-\lstset{language=C}
-\begin{lstlisting}
-for $i in xbrl/InversionesFinancieras/InversionesFinancierasValorEstimado/
-InversionesFinancierasExterior
-where $i/CodigoISIN = "US912828Q525"
-return $i/InversionesFinancierasValor
-\end{lstlisting}
-
-\subsubsection*{Resultado}
-\lstinputlisting[language=XML]{code/consulta4.xml} 
----------------------------------------------------------------------------------------------------------\\
+\subsubsection*{Amazon}
 
 
 
-%Cras gravida, est vel interdum euismod, tortor mi lobortis mi, quis adipiscing elit lacus ut orci. Phasellus nec fringilla nisi, ut vestibulum neque. Aenean non risus eu nunc accumsan condimentum at sed ipsum.
-%\begin{wrapfigure}{l}{0.42\textwidth} % Inline image example, use an 'r' column type to position the figure on the right
-%	\includegraphics[width=\linewidth]{fish.png}
-%	\caption{An example fish.}
-%\end{wrapfigure}
-%Aliquam fringilla non diam sed varius. Suspendisse tellus felis, hendrerit non bibendum ut, adipiscing vitae diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lobortis purus eget nisl scelerisque, commodo rhoncus lacus porta. Vestibulum vitae turpis tincidunt, varius dolor in, dictum lectus. Aenean ac ornare augue, ac facilisis purus. Sed leo lorem, molestie sit amet fermentum id, suscipit ut sem. Vestibulum orci arcu, vehicula sed tortor id, ornare dapibus lorem. Praesent aliquet iaculis lacus nec fermentum. Morbi eleifend blandit dolor, pharetra hendrerit neque ornare vel. Nulla ornare, nisl eget imperdiet ornare, libero enim interdum mi, ut lobortis quam velit bibendum nibh.
-%
-%\begin{itemize}
-%	\item First bullet point item
-%	\item Second bullet point item
-%	\item Third bullet point item
-%\end{itemize}
-%
-%Morbi tempor congue porta. Proin semper, leo vitae faucibus dictum, metus mauris lacinia lorem, ac congue leo felis eu turpis. Sed nec nunc pellentesque, gravida eros at, porttitor ipsum. Praesent consequat urna a lacus lobortis ultrices eget ac metus. In tempus hendrerit rhoncus. Mauris dignissim turpis id sollicitudin lacinia. Praesent libero tellus, fringilla nec ullamcorper at, ultrices id nulla. Phasellus placerat a tellus a malesuada.
-%
-%\begin{enumerate}
-%	\item First numbered list item
-%	\item Second numbered list item
-%\end{enumerate}
-
-%------------------------------------------------
-
-%\section*{Conclusion}
-%
-%Fusce in nibh augue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In dictum accumsan sapien, ut hendrerit nisi. Phasellus ut nulla mauris. Phasellus sagittis nec odio sed posuere. Vestibulum porttitor dolor quis suscipit bibendum. Mauris risus lectus, cursus vitae hendrerit posuere, congue ac est. Suspendisse commodo eu eros non cursus. Mauris ultrices venenatis dolor, sed aliquet odio tempor pellentesque. Duis ultricies, mauris id lobortis vulputate, tellus turpis eleifend elit, in gravida leo tortor ultricies est. Maecenas vitae ipsum at dui sodales condimentum a quis dui. Nam mi sapien, lobortis ac blandit eget, dignissim quis nunc.
-%
-%Donec luctus tincidunt mauris, non ultrices ligula aliquam id. Sed varius, magna a faucibus congue, arcu tellus pellentesque nisl, vel laoreet magna eros et magna. Vivamus lobortis elit eu dignissim ultrices. Fusce erat nulla, ornare at dolor quis, rhoncus venenatis velit. Donec sed elit mi. Sed semper tellus a convallis viverra. Maecenas mi lorem, placerat sit amet sem quis, adipiscing tincidunt turpis. Cras a urna et tellus dictum eleifend. Fusce dignissim lectus risus, in bibendum tortor lacinia interdum.
-%
-%\begin{table}[h] % [h] forces the table to be output where it is defined in the code (it suppresses floating)
-%	\caption{Example table.}
-%	\centering
-%	\begin{tabular}{l l r}
-%		\toprule
-%		\multicolumn{2}{c}{Name} \\
-%		\cmidrule(r){1-2}
-%		First Name & Last Name & Grade \\
-%		\midrule
-%		John & Doe & $7.5$ \\
-%		Richard & Miles & $5$ \\
-%		\bottomrule
-%	\end{tabular}
-%\end{table}
-%
-%Fusce eleifend porttitor arcu, id accumsan elit pharetra eget. Mauris luctus velit sit amet est sodales rhoncus. Donec cursus suscipit justo, sed tristique ipsum fermentum nec. Ut tortor ex, ullamcorper varius congue in, efficitur a tellus. Vivamus ut rutrum nisi. Phasellus sit amet enim efficitur, aliquam nulla id, lacinia mauris. Quisque viverra libero ac magna maximus efficitur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum mollis eros in tellus fermentum, vitae tristique justo finibus. Sed quis vehicula nibh. Etiam nulla justo, pellentesque id sapien at, semper aliquam arcu. Integer at commodo arcu. Quisque dapibus ut lacus eget vulputate.
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
