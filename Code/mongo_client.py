@@ -97,7 +97,10 @@ class CovidClient:
             return e
 
     def get_data_date_country(self, country, date):
-        pass
+        try:
+            data = self.__collection.find({"countriesAndTerritories": country, "dateRep": date},
+                                          {"countriesAndTerritories", "cases", "deaths"})
 
-    def get_data_date_continent(self, continent, date):
-        pass
+            return data[0]
+        except Exception as e:
+            return e
