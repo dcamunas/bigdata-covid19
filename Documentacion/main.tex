@@ -21,50 +21,22 @@
 
 \documentclass[11pt]{diazessay} % Font size (can be 10pt, 11pt or 12pt)
 \usepackage{listings}
-\usepackage[utf8]{inputenc}
-\usepackage{listingsutf8}
-
-
-
-\usepackage{color}
-\definecolor{gray}{rgb}{0.4,0.4,0.4}
-\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
-\definecolor{cyan}{rgb}{0.0,0.6,0.6}
-
-\lstset{
-	basicstyle=\ttfamily,
-	columns=fullflexible,
-	showstringspaces=false,
-	commentstyle=\color{gray}\upshape
-}
-
-\lstdefinelanguage{XML}
-{
-	morestring=[b]",
-	morestring=[s]{>}{<},
-	morecomment=[s]{<?}{?>},
-	stringstyle=\color{black},
-	identifierstyle=\color{darkblue},
-	keywordstyle=\color{cyan},
-	morekeywords={xmlns,version,type}% list your attributes here
-}
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\title{\textbf{Fondo de Inversión BBVA BOLSA USA, FI \\ Base de datos documental en XML}} % Title and subtitle
+\title{\textbf{Aplicación sobre el efecto en sanidad del coronavirus en el mundo}} % Title and subtitle
 
 \author{\textbf{Bases de Datos Avanzadas} \\ \textit{Escuela Superior Informática (UCLM)}} % Author and institution
 
-\date{14 de Abril de 2020} % Date, use \date{} for no date
+\date{\today} % Date, use \date{} for no date
 
 %----------------------------------------------------------------------------------------
 
 \begin{document}
 
 \maketitle % Print the title section
-
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT AND KEYWORDS
@@ -74,187 +46,335 @@
 
 \begin{abstract}
 	
-	Una \textit{base de datos XML} constituye un sistema software que da persistencia a datos almacenados en formato \textit{XML}. Estos datos pueden ser interrogados, exportados y serializados. Las bases de datos \textit{XML} están generalmente asociadas con las bases de datos documentales.\\
-	
-	En nuestro caso, crearemos una Base de Datos XML, para el almacenamiento sobre información del fondo de inversión de \textbf{BBVA BOLSA USA, FI} regulado por la Comisisión Nacional del Mercado de Valores (\textbf{\textit{CNMV}}). Centrándonos en el primer semestre del año 2019.
+	Este proyecto tratará sobre la creación de una aplicación, para la cual se realizará un estudio sobre el efecto del coronavirus (\textbf{COVID-19}) en el mundo. Para ello se usará las diversas técnicas utilizadas para el tratamiento masivo de información
+
 \end{abstract}
 
-\hspace*{3.6mm}\textit{Keywords:} \textit{Base de datos documental}, \textit{XML}, \textit{CNMV}, \textit{Banco BBVA}, \textit{USA}
+\hspace*{3.6mm}\textit{Keywords:} \textit{Big Data}, \textit{Data Warehouse}, NBA
 
 \vspace{20pt} % Vertical whitespace between the abstract and first section
 
 %----------------------------------------------------------------------------------------
 %	ESSAY BODY
 %----------------------------------------------------------------------------------------
-\newpage
+
 \section*{Introducción}
+El \textbf{Big Data} (\textit{macro datos, datos masivos, inteligencia de datos}), se conoce como el análisis masivo de datos. Esto es una cantidad de datos tan sumamente grande, que las aplicaciones que se dedicaban al  procesamiento de datos que tradicionalmente se venían usando no son capaces de tratar y poner en valor en un tiempo razonable. Este  término ha estado en uso desde la década de \textit{1990}.\\
+Este término también hace referencia, a las nuevas tecnologías que hacen posible el almacenamiento y procesamiento de datos, además del uso que se hace de la información obtenida a través de ellas.\\
 
-XML \cite{xml} es un lenguaje de marcado similar a HTML. Significa \textit{Extensible Markup Language} (Lenguaje de Marcado Extensible) y es una especificación de W3C como lenguaje de marcado de propósito general. Esto significa que, a diferencia de otros lenguajes de marcado, XML no está predefinido, por lo que debes definir tus propias etiquetas. El propósito principal del lenguaje es compartir datos a través de diferentes sistemas, como Internet \cite{intro_xml}.\\
+\subsection*{Tipos de datos que existen}
+A continuación, se dará una breve explicación de los tipos de datos existentes, y de los cuales hace uso esta tecnología (\textbf{\textit{Big Data}}).
 
-En nuestro caso, hemos construido una base de datos de forma nativa desde un archivo de tipo \textit{XML}. En la cual se almacena toda la información relacionada con el primer semestre de 2019 del fondo de inversión BBVA BOLSA USA, FI \cite{fondo}. Un fondo de inversión es una institución de inversión colectiva (IIC), que consiste en reunir fondos de distintos inversores, naturales o jurídicos, para invertirlos en diferentes instrumentos financieros, su responsabilidad se delega a una sociedad administradora que puede ser un banco o empresa de servicios de inversión \cite{def_fondo}. En nuestro caso la sociedad administradora es el banco BBVA y el regulador es la Comisión Nacional del Mercado de Valores (CNMV).\\
+\subsubsection*{Datos estructurados}
+Este tipo de datos se suelen usar en el tratamiento de datos. Ya que sus principales características son que pueden ser almacenados en tablas, y que tienen definido su formato.\\
+Algunos datos de este tipo son:
 
-Para generar el \textit{XML Schema} hemos empleado la herramienta \textit{Liquid Studio 2020} \cite{liquid_studio} y para realizar las correspondientes consultas y visualizar la base de datos hemos utilizado \textit{Basex} \cite{basex}. En cuanto a la generación de una transformación hemos utilizado una herramienta online de \textit{W3Schools} \cite{gen_xslt}.
-\newpage
-
-\section*{Creación de la base de datos}
-Para llevar a cabo la creación de la base de datos, se ha utilizado la herramienta anteriormente nombrada \textit{\textbf{BaseX}} \cite{basex}, que actúa como gestor de la base de datos. A partir del archivo \textit{XML} (\textit{Semestre1-BBVA.xml}), el cual contiene toda la información anteriormente explicada.\\
-
-
-A continuación se mostrará imágenes de la herramienta BaseX, y de como trata esta la información de nuestra base de datos.
-
-\begin{figure}[h!]
-	\includegraphics[width=\linewidth]{interfaz1.PNG}
-	\centering
-	\caption{Interfaz de  BaseX}
-	\label{fig:app}
-\end{figure}
-
-Se puede observar las múltiples de opciones que tiene esta herramienta, como es la representación de los nodos, el resultado de introducir la consulta, donde se muestra la estructura que tiene cada nodo que forma la BD, etc.
-
-\begin{figure}[h!]
-	\includegraphics[width=70mm]{datos.PNG}
-	\centering
-	\caption{Información principal de nuestra base de datos}
-	\label{fig:data-app}
-\end{figure}
-
-Como se puede observar BaseX nos ofrece todo tipo de información, como el nombre, tamaño, número de nodos (preguntas en nuestro caso) que tiene la BD, localización dentro de nuestro servidor, etc.
-
-
-\newpage
-\section*{XML Schema}
-\textit{XML Schema} es un lenguaje utilizado para describir la estructura y las restricciones de los contenidos de los documentos XML de una forma muy precisa y explícita, más allá de las normas sintácticas impuestas por el propio lenguaje XML \cite{xml_schema}. \\
-
-Como se ha mencionado anteriormente el esquema XML lo hemos generado con la herramienta \textit{Liquid Studio}. El resultado han sido un total de nueve archivos y dada la complejidad del esquema resultante no hemos incluido en la memoria los esquemas. Aunque, estos se pueden visualizar en forma de imagen y en formato \textit{xsd} en los archivos de\textit{XML-Schema} del entregable.\\
-
-A continuación se mostrará un ejemplo sencillo, en este caso sobre el esquema del elemento \textit{CommunicattionWays}, el cual forma parte (es un subelemento) del elemento \textit{InformeFIM}.\\
-
-El elemento \textbf{CommunicattionWays}, esta formado por dos subelementos, los cuales son: \textit{CommunicattionType} indica el tipo de comunicación que se lleva a cabo, y \textit{CommunicattionValue} indica en este caso que el valor sera almacenado en un atributo de tipo String. Se puede observar su representación en la Figura \ref{fig:ejemplo_xsd}\\
-
-\begin{figure}[h!]
-	\includegraphics[width=\linewidth]{ejemplo-xsd.png}
-	\caption{Representación Schema XML del elemento \textit{CommunicattionWays}}
-	\label{fig:ejemplo_xsd}
-\end{figure}
-
-
-Donde el código fuente del respectivo archivo de tipo \textit{\textbf{XSD}} sería el siguiente:\\
-
-\lstinputlisting[language=XML]{code/ejemplo.xsd} 
-
---------------------------------------------------------------------------------------------------\\
-
-\subsection*{Estructura de un elemento de la base de datos}
-La estructura de los tipos de \textbf{elementos} que forman esta base de datos, es la \textit{básica}, dado que cada elemento consta de sus distintos tipos de atributos que lo forman. La peculiraridad que tiene es que, podemos encontrar elementos formando otros elementos, a estos tipos se les llama \textbf{subelementos}.\\
-Esto se debe a una relación de \textit{herencia} entre el elemento principal y los distintos subelementos que lo forman. Tambien cabe destacar, que cada subelemento, puede tener sus propios atributos.
-
-En la Figura \ref{fig:estructura} se puede apreciar mejor esta explicación.
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=110mm]{Estructura.png}
-	\caption{Estructura de un elemento}
-	\label{fig:estructura}
-\end{figure}
-
-
-Como se puede observar, por ejemplo dentro del elemento \textit{InformeFIM}, encontramos el elemento \textit{DatosFondoCompartimentoFIM}, que a la vez este esta formado por los elementos \textit{DatosEconomicosFIM} y \textit{InversionesFinancierasFIM}, cada uno con sus multiples atributos y subelementos que lo forman.
-
-
-\newpage
-\section*{Transformación XSL}
-En esta sección vamos a ver un ejemplo sencillo de transformación \textit{XSL}, (ya que la tranformación de la base de datos de forma completa es bastante complejo).\\ Transformando un elemento de los que esta formada nuestra base de datos que hemos visto en la sección anterior a un \textit{HTML} sencillo. \\
-
-Las transformaciones \textit{XSL} o \textit{XSLT} es un estándar de la organización W3C que presenta una forma de transformar documentos XML en otros archivos del mismo o distinto formato. Los archivos XSLT realizan la transformación del documento utilizando una o varias reglas de plantilla.\\
-
-Estas reglas de plantilla unidas al documento fuente a transformar alimentan un procesador de XSLT, que realiza las transformaciones deseadas poniendo el resultado en un archivo de salida, o, como en el caso de una página web, las hace directamente en un dispositivo de presentación tal como el monitor del usuario \cite{xslt}.\\
-
-Para realizar esta transformación hemos creado un nuevo archivo xml a partir del original, en el cual hemos incluido una parte de la etiqueta \textit{InformeFIM}. Además de esto, hemos modificado las etiquetas, haciéndolas más sencillas, porque la transformación no se realizaba correctamente con las etiquetas originales. El código xml utilizado para la transformación se puede observar en el siguiente listado:\\
-
-\lstinputlisting[language=XML]{code/ejemplo_xsl.xml} 
----------------------------------------------------------------------------------------------------------\\
-
-La transformación  creada se puede apreciar en el siguiente listado:
-\lstinputlisting[language=XML]{code/ejemplo_xsl.xslt} 
----------------------------------------------------------------------------------------------------------\\
-
-La idea de este código es construir un \textit{HTML} para mostrar algunos elementos relevantes del informe del fondo de inversión, para ello se hace uso de elementos \textit{HTML} y de la función \textit{XSL, value-of select=""}. Esta función selecciona un elemento del XML que se desea convertir, indicándole la ruta a seguir dentro de las etiquetas \cite{xsl_valueof}. El resultado en \textit{HTML} de la trasformación se puede apreciar en la figura \ref{fig:xslt_result}.\\
-
-\begin{figure}[h!]
-	\includegraphics[width=\linewidth]{resultado-xslt.PNG}
-	\caption{Resultado de la transformación XSL}
-	\label{fig:xslt_result}
-\end{figure}
-
-
-\newpage
-\section*{Ejemplos de consulta}
-Uno de los principales objetivos de estas consultas, es la comprobación de que nuestra base de datos funciona de forma correcta, debido a que con una serie de consultas, se puede observar que nuestra base de datos ha almacenado de forma correcta (estructura, formato...) los datos que componen la información. 
-
-En nuestro caso cada nodo o elemento por el que esta formada la base de datos es distinta información sobre el primer semestre de este banco, la cual los atributos que la forman son los explicados anteriormente en el apartado anterior.\\
-
-A continuación se mostrarán una serie de consultas realizadas a nuestra base de datos, junto con su resultado.
-
-\subsection*{Devolver toda la información de los datos económicos del FIM}
-\subsubsection*{Consulta}
-	\lstset{language=C}
-\begin{lstlisting}
-for $i in xbrl/InformeFIM/DatosFondoCompartimentoFIM
-return $i/DatosEconomicosFIM`
-\end{lstlisting}
-	
-\subsubsection*{Resultado}
-\lstinputlisting[language=XML]{code/consulta1.xml} 
----------------------------------------------------------------------------------------------------------\\
-
-
-\subsection*{Devolver todas los datos sobre las Comparativas de rentabilidad media}
-\subsubsection*{Consulta}
 \begin{itemize}
-	\item \textbf{En XQuery}:
-	\lstset{language=C}
-	\begin{lstlisting}
-	for $i in xbrl/ComparativaRentabilidadMedia
-	return $i
-	\end{lstlisting}
-	
-	\item \textbf{En XPath}:
-	\lstset{language=C}
-	\begin{lstlisting}
-	xbrl/ComparativaRentabilidadMedia
-	\end{lstlisting}
+	\item \textbf{Números.}
+	\item \textbf{Cadenas de caracteres.}
+	\item \textbf{Fechas.}
 \end{itemize}
 
-\subsubsection*{Resultado}
-\lstinputlisting[language=XML]{code/consulta2.xml} 
----------------------------------------------------------------------------------------------------------\\
+\subsubsection*{Datos semiestructurados}
+Los \textbf{\textit{datos semiestructurados}} tienen una tipo de estructura, pero esta no es lo suficientemente regular, como para permitir su gestión y estructuración como si fuese similar a los datos estructurados.
+Este tipo de datos, posee ciertos patrones comunes que lo describen y dan información sobre las relaciones entre los mismos.\\
+Un ejemplo de utilización, sería el lenguaje de marcas \textit{HTML}, el cual sirve para el desarrollo de paginas web, donde estas pautas son representadas por su sistema de etiquetas.
 
-\subsection*{Devolver el valor de las inversiones financieras al exterior}
-\subsubsection*{Consulta}
-\lstset{language=C}
-\begin{lstlisting}
-for $i in xbrl/InversionesFinancieras/InversionesFinancierasValorEstimado/
-InversionesFinancierasExterior
-return $i/InversionesFinancierasValor
-\end{lstlisting}
+\subsubsection*{Datos no estructurados}
+Este tipo de datos, se trata  de datos que han sido obtenidos en su formato original. Estos no se encuentran especificados en ningún formato, el cual permita que sean almacenados como se almacenarían los anteriores tipos de datos (\textit{estructurados} y \textit{semiestructurados}). Ya que no disponen de una estructura definida (longitud, formato, etc) para poder desglosar la información.\\
+Estos datos se pueden encontrar, por ejemplo: en presentaciones (\textit{PowerPoints}), correos, documentos de texto \textit{(Word, PDF, documentos de google}, etc).
 
-\subsubsection*{Resultado}
-\lstinputlisting[language=XML]{code/consulta3.xml} 
----------------------------------------------------------------------------------------------------------\\
+%------------------------------------------------
+\newpage
+\section*{Obtención de los datos}
+Los datos se han obtenido aplicando técnicas de \textit{web scraping} \cite{web_scraping} gracias a la librería \textit{Beautiful Soup} \cite{Beautiful_Soup} de \textit{Python}. Con esta librería se obtiene el código HTML de una pagina web y se pueden realizar diversas operaciones con esa información, en nuestro caso hemos construido un \textit{dataframe} \cite{dataframe} para poder construir posteriormente la base de datos.
 
-\subsection*{Devolver el valor de una inversión financiera en el exterior (la obtendremos por su identificador)}
-\subsubsection*{Consulta}
-\lstset{language=C}
-\begin{lstlisting}
-for $i in xbrl/InversionesFinancieras/InversionesFinancierasValorEstimado/
-InversionesFinancierasExterior
-where $i/CodigoISIN = "US912828Q525"
-return $i/InversionesFinancierasValor
-\end{lstlisting}
+\subsection*{Datos de jugadores}
+Los datos relacionados con los jugadores se han obtenido gracias al siguiente código \cite{web_scraping_nba} en \textit{Python}:\\
 
-\subsubsection*{Resultado}
-\lstinputlisting[language=XML]{code/consulta4.xml} 
----------------------------------------------------------------------------------------------------------\\
+
+
+Como se puede ver, el programa esta formado por dos funciones. La primera para obtener las estadísticas globales de todos los jugadores \cite{players_data} y con la segundo se obtienen los datos relativos a los \textit{rookies} (jugadores nóveles) \cite{rookies_data}. Ambas funciones devolverán un objeto \textit{dataframe} \cite{dataframe}, porque en el programa principal se llamará a estas funciones para construir la base de datos, como se ha comentado anteriormente. Para el tratamiento de los datos en forma de \textit{dataframe} utilizaremos la librería \textit{pandas} \cite{pandas}.\\
+
+Para obtener los datos que nos interesan de la web es necesario que sepamos cuáles son las etiquetas HTML que debemos de obtener del objeto \textit{soup}. Esto normalmente se realiza inspeccionando la página web con cualquier navegador.
+
+\subsection*{Datos de equipos}
+Los datos relativos a los equipos de la \textit{nba} se han obtenido de forma similar a los datos de los jugadores:
+
+
+
+La función para obtener los datos de los equipos es muy similar a las funciones mencionadas anteriormente, con la diferencia que el \textit{dataframe} que retornamos lo ordenamos por el nombre del equipo. La segunda función en un principio no la desarrollamos, pero en la construcción de la base de datos apreciamos que los datos de los jugadores indican el equipo mediante abreviaturas. Por lo tanto esta función la utilizaremos para establecer las equivalencias.
+
+\clearpage
+
+\section*{Creación de la base de datos}
+La creación de la base de datos la hemos automatizado gracias al siguiente \textit{script} que llama a las funciones explicadas en la sección anterior:
+
+
+
+El programa lleva a cabo las siguientes operaciones:
+\begin{itemize}
+	\item \textbf{Cargar los datos:} se llama a las funciones explicadas anteriormente para cargar la información relativas a jugadores, \textit{rookies} y equipos.  Además, en esta parte del programa también se establece la equivalencia de los equipos con sus abreviaturas.
+	\item \textbf{Transformación de datos:} se realiza una limpieza de los datos, que consiste en eliminar las columnas que no vamos a utilizar, eliminar las filas vacías y eliminación de jugadores que no juegan en un equipo de la nba.
+	\item \textbf{Construcción del \textit{dataframe} central}: estos datos se usarán para construir una tabla central que relacione los datos de jugadores, \textit{rookies} y equipos, siguiendo el modelo de estrella \cite{estrella}.
+	\item \textbf{Construcción de la base datos}: en este último paso se construirán las cuatro tablas de la base datos y se introducirán los datos guardados en los cuatro \textit{dataframes} que hemos comentado. Las operaciones que se ejecutan para crear las tabla y sus respectivas relaciones se pueden ver en el fichero \textit{\textbf{creation.sql}}.
+\end{itemize}
+
+\subsection*{Diagrama relacional}
+El diagrama relacional de nuestra base de datos, estará formado por cuatro tablas relacionadas en forma de estrella, de las cuales tres de ellas las crearemos a partir de los datos obtenidos en el punto anterior (\textit{Equipos}, \textit{Jugadores} y \textit{Rookies}). La cuarta tabla (\textit{Jugadores-Equipos}) es una tabla central, la cual está relacionada con cada una de las anteriores tablas.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1\linewidth]{bd_dRelacional.pdf}
+	\caption{Diagrama relacional de nuestra base de datos}
+	\label{fig:diagrama}
+\end{figure}
+
+A continuación, se explicara la definición de cada parametro por los que está formada cada tabla.\\
+
+La tabla \textbf{Jugadores} (PLayers), esta formada por:
+\begin{itemize}
+	\item \textbf{id}: Player id.
+	\item \textbf{Player}: Player full name.
+	\item \textbf{Pos}: Position.
+	\item \textbf{Age}: Player age.
+	\item \textbf{G}: Games.
+	\item \textbf{GS}: Games started
+	\item \textbf{MP}: Minutes played.
+	\item \textbf{FG (3P + 2P)}: Field goals.
+	\item \textbf{FGA (3PA + 2PA)}: Field goal attempts.
+	\item \textbf{FG\%}: Field goal percentage.
+	\item \textbf{3P}: 3 points field goals.
+	\item \textbf{3PA}: 3 point field goal attempts.
+	\item \textbf{3P\%}: FG\% on 3 points FGA's (field goal attempts).
+	\item \textbf{2P}: 2 points field goals.	
+	\item \textbf{2PA}: 2 point field goal attempts.
+	\item \textbf{2P\%}: FG\% on 2 points FGA's (field goal attempts).
+	\item \textbf{FT}:Free Throwns.
+	\item \textbf{FTA}:Free Thrown Attempts.
+	\item \textbf{FT\%}: Free Throw Percentage.
+	\item\textbf{ORB}: Offensive Rebounds.
+	\item\textbf{DRB}: Defensive Rebounds.
+	\item\textbf{TRB}: Total Rebounds
+	\item\textbf{AST}: Assists.
+	\item\textbf{STL}: Steals.
+	\item\textbf{BLK}: Blocks.
+	\item\textbf{TOV}:Turnovers.
+	\item\textbf{PF}: Personal Fouls.
+	\item\textbf{PTS}: Points.
+\end{itemize}
+
+La tabla \textbf{Equipos} (Teams), esta formada por:
+\begin{itemize}
+	\item \textbf{id}: Team id.
+	\item \textbf{Key}: Team initials.
+	\item \textbf{Team}: Team name.
+	\item \textbf{Conf}: Team's conference.
+	\item \textbf{Div}: Team's division.
+	\item \textbf{W}: Wins.
+	\item \textbf{L}: Losses.
+	\item \textbf{W/L\%}: Win-Loss Percentage.
+	\item \textbf{MOV}: Margin of Victory.
+	\item\textbf{ORTg}: Offensive Rating. An estimate of points produced (\textit{players}) or scored (\textit{teams}) per 100 possessions.
+	\item\textbf{DRTg}: Defensive Rating. An estimate of points allowed per 100 possessions.
+	\item\textbf{NRTg}: Net Rating. An estimate of point differential per 100 possessions.
+\end{itemize}
+
+La tabla \textbf{Rookies}, esta formada por:
+\begin{itemize}
+	\item \textbf{id}: Rookie id.
+	\item \textbf{Player}: Player full name.
+	\item \textbf{Debut}: Debut.
+	\item \textbf{Age}: Player age.
+	\item \textbf{G}: Games.
+	\item \textbf{MP}: Minutes played.
+	\item \textbf{FG (3P + 2P)}: Field goals.
+	\item \textbf{FGA (3PA + 2PA)}: Field goal attempts.
+	\item \textbf{3P}: 3 points field goals.
+	\item \textbf{3PA}: 3 point field goal attempts.
+	\item \textbf{3P\%}: FG\% on 3 points FGA's (field goal attempts).
+	\item \textbf{FT}:Free Throwns.
+	\item \textbf{FTA}:Free Thrown Attempts.
+	\item \textbf{FT\%}: Free Throw Percentage.
+	\item\textbf{ORB}: Offensive Rebounds.
+	\item\textbf{DRB}: Defensive Rebounds.
+	\item\textbf{TRB}: Total Rebounds
+	\item\textbf{AST}: Assists.
+	\item\textbf{STL}: Steals.
+	\item\textbf{BLK}: Blocks.
+	\item\textbf{TOV}:Turnovers.
+	\item\textbf{PF}: Personal Fouls.
+	\item\textbf{PTS}: Points.
+\end{itemize}
+
+La tabla \textbf{Jugadores-Equipos} (Players-Teams), esta formada por:
+\begin{itemize}
+	\item\textbf{id-Player}: Player id.
+	\item\textbf{id-Team}: Team id.
+	\item\textbf{Player}: Player full name.
+	\item\textbf{Team}: Team name.
+	\item\textbf{Rookie}: Rookie id. If \textit{player} is a \textit{rookie}, then \textit{id-Rookie} stores in this attribute.
+\end{itemize}
+
+\clearpage
+
+\section*{Obtención de estadísticas}
+A continuación, se realizarán una serie de consultas para obtener información sobre algunas estadísticas sobre los jugadores y los equipos de esta temporada. Para ver la gran utilidad que puede aportar la unión de estas dos tecnologías \textit{SQLite} \cite{sqlite} y \textit{Python}. Además, se van a generar distintos gráficos con la librería \textit{matplotlib} \cite{matplotlib} de \textit{Python}. \\
+
+Para facilitar la obtención de los datos se han generado una serie de \textit{vistas SQL}, las cuales están almacenadas en nuestra base de datos (\textit{nba-data.db}) y son las siguientes:
+
+\newpage
+\subsection*{Número de jugadores que tiene cada equipo}
+Se obtendrá el número de jugadores que componen cada equipo de la temporada (ver Figura \ref{fig:playersteams}), los datos han sido obtenidos a partir de la siguiente consulta:\\
+
+\textit{"SELECT * FROM NUM-PT"}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{teams.png}
+	\caption{Número de jugadores que tiene cada equipo.}
+	\label{fig:playersteams}
+\end{figure}
+
+
+
+\subsection*{Porcentaje de jugadores y rookies de la temporada.}
+Mediante un diagrama en forma de "pastel" se puede observar de forma rápida e intutiva en este caso en la Figura \ref{fig:rookies}, los jugadores \textit{rookies} y no \textit{rookies} que jugaron esta temporada.\\
+
+Lo mas importante es generar bien la consulta, a partir de la cual se va a generar el \textit{dataframe}:\\
+
+\textit{"SELECT * FROM STAT-PT"}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{rookies.png}
+	\caption{Porcentaje de jugadores y rookies de la temporada.}
+	\label{fig:rookies}
+\end{figure}
+
+
+\subsection*{Número de jugadores y rookies de cada conferencia}
+Se obtendrán los datos sobre el numero de jugadores y número de rookies de cada conferencia, como se puede ver en la Figura \ref{fig:rookies-conf}. \\
+
+Para poder obtener los datos se ha utlizado la siguiente consulta \textit{SQL}:\\
+
+\textit{"SELECT Conference, SUM(NoRookies-Perc) AS "PlayersPerc",SUM(RookiesPerc) AS "RookiesPerc" FROM STAT-PT GROUP BY Conference;"}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{rookies-conf.png}
+	\caption{Porcentaje de jugadores y rookies por conferencia.}
+	\label{fig:rookies-conf}
+\end{figure}
+
+\subsection*{Simulación clasificación final de la temporada}
+Se mostrará la clasificación final de la temporada (ver Cuadro \ref{qualy}). Sin tener en cuenta la conferencia a la que pertenece cada equipo, ni los \textit{playoffs}. 
+Se han obtenidos los datos de la base de datos a partir de la siguiente consulta:\\
+
+\textit{"SELECT Key, Team, Conf, W, L FROM TEAMS ORDER BY W/L DESC;"}
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|c|c|l|c|}
+		\hline
+		\textbf{Pos} & \textbf{Key} & \multicolumn{1}{c|}{\textbf{Team}} & \textbf{Conf} \\ \hline
+		\textbf{1}   & MIL          & Milwaukee Bucks                    & E             \\ \hline
+		\textbf{2}   & TOR          & Toronto Raptors                    & E             \\ \hline
+		\textbf{3}   & GSW          & Golden State Warriors              & W             \\ \hline
+		\textbf{4}   & DEN          & Denver Nuggets                     & W             \\ \hline
+		\textbf{5}   & HOU          & Houston Rockets                    & W             \\ \hline
+		\textbf{6}   & POR          & Portland Trail Blazers             & W             \\ \hline
+		\textbf{7}   & PHI          & Philadelphia 76ers                 & E             \\ \hline
+		\textbf{8}   & UTA          & Utah Jazz                          & W             \\ \hline
+		\textbf{9}   & BOS          & Boston Celtics                     & E             \\ \hline
+		\textbf{10}  & OKC          & Oklahoma City Thunder              & W             \\ \hline
+	\end{tabular}
+	\caption{Clasificación final de la temporada (sin \textit{Playoffs}).}
+	\label{qualy}
+\end{table}
+\newpage
+\subsection*{Obtener la información del mejor equipo de cada conferencia.}
+Se obtendrá la información del mejor equipo de cada conferencia, en este caso : Este (E): \textit{Milwaukee Bucks}, Oeste (W):
+\textit{Golden State Warriors}, como se puede ver en el Cuadro \ref{teamConf}. 
+Se ha utilizado la siguiente consulta:\\
+ 
+\textit{"SELECT * FROM TEAMS GROUP BY CONF HAVING MAX(W/L);"}
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+		\hline
+		\textbf{Key} & \textbf{Team}         & \textbf{Conf} & \textbf{W} & \textbf{L} & \textbf{W/L \%} & \textbf{MOV} & \textbf{ORtg} & \textbf{DRtg} & \textbf{NRtg} \\ \hline
+		MIL          & Milwaukee Bucks       & E             & 60         & 22         & 0.732           & 8.87         & 114.23        & 105.76        & 8.47          \\ \hline
+		GSW          & Golden State Warriors & W             & 57         & 25         & 0.695           & 6.46         & 116.63        & 110.24        & 6.39          \\ \hline
+	\end{tabular}
+	\caption{Primer equipo de cada conferencia (E/W)}
+	\label{teamConf}
+\end{table}
+
+
+
+\section*{Modelo de regresión lineal}
+El modelo construido está basado en la regresión lineal simple de dos variables \cite{regresion}, los puntos totales que anota un jugador con sus intentos de tiro. El objetivo con este modelo será predecir cuántos puntos anotaría un jugador indicando los intentos de tiro.\\
+
+Los modelos predictivos o de regresión consisten en la representación de la relación entre dos (o más) variables a través de un modelo formal supone contar con una expresión lógico-matemática que resume cómo es esa relación. Además, este modelo permite realizar predicciones de los valores que tomará una de las dos variables (la que se asuma como variable de respuesta o dependiente, \textit{y}) a partir de los valores de la otra (la que se asuma como variable explicativa, independiente o predictora, \textit{x}) \cite{modelo_regresion}.\\
+
+\subsection*{Cálculo del modelo}
+
+En nuestro caso, como vamos a realizar una regresión lineal simple la formula sería la siguiente:\\
+
+\begin{equation}
+\centering
+y = \alpha + \beta * x
+\end{equation}
+\\
+La variable que queremos predecir (\textit{y}) serán los puntos que anotará un jugador y para ello utilizaremos la variable explicativa de los tiros a canasta de un jugador (x), contando los tiros libres, los tiros de dos puntos y los triples. \\
+
+\begin{equation}
+\centering
+PTS = \alpha + \beta * TA
+\end{equation}
+\\
+Los parámetros utilizados en la predicción se van a calcular utilizando la librería \textit{statsmodels} \cite{statsmodels} de Python. Los pasos seguidos para calcular este modelo se pueden ver con detalle en el \textit{notebook} de \textit{Jupyter} \cite{jupyter} que hemos creado. La fórmula resultante con los parámetros calculados en base a los datos almacenados en nuestro \textit{data warehouse} es la siguiente:\\
+\begin{equation}
+\centering
+PTS = -5.209429 + 1.000137 * TA
+\end{equation}
+\\
+Al dibujar la recta de regresión \cite{recta} podemos observar como de bueno es el modelo creado para predecir los puntos que anotará un jugador introduciendo los intentos a canasta (ver Figura \ref{fig:recta}). Cuanto menos dispersos y más cercanos a la recta estén los puntos mejor será nuestro modelo.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{recta_regresion.png}
+	\caption{Recta de regresión de PTS~TA}
+	\label{fig:recta}
+\end{figure}
+
+\subsection*{Realizar predicción}
+En este punto, se va a realizar una serie de predicciones utilizando la expresión calculada anteriormente. En el Cuadro \ref{pred} se pueden ver cinco jugadores con los puntos reales anotados en la temporada y los puntos que predice nuestro modelo. Se puede apreciar que la predicción se asemeja bastante a los puntos que anota un jugador. \\
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{Player} & \textbf{PTS} & \textbf{PTS\_pred} \\ \hline
+		Álex Abrines    & 165          & 164.813847         \\ \hline
+		Quincy Acy      & 17.0         & 22.794404          \\ \hline
+		Jaylen Adams    & 108.0        & 113.806864         \\ \hline
+		Steven Adams    & 1108.0       & 1095.941316        \\ \hline
+		Bam Adebayo     & 729.0        & 706.888055         \\ \hline
+	\end{tabular}
+	\caption{Predicciones del modelo}
+	\label{pred}
+\end{table}
+
+Cabe destacar que los parámetros han sido calculados con los mismos datos que luego hemos usado para predecir, por lo tanto, se puede dar el fenómeno de la multicolinealidad \cite{multicol}. Esto sucede cuando el modelo se ajusta demasiado a un conjunto de datos y cuando utilizamos otros datos para hacer una predicción el modelo falla. \\
+
+En nuestro caso, al usar datos de una temporada de una competición deportiva se presupone que los datos no van a ser muy desiguales de una temporada a otra. Con lo cual, nuestro modelo se debe comportar correctamente cuando introducimos un dato que no forma parte del conjunto utilizado para crear el modelo.
+
+\newpage
+
+
 
 
 
@@ -306,7 +426,7 @@ return $i/InversionesFinancierasValor
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
-\newpage
+
 \bibliographystyle{abbrv}
 
 \bibliography{sample.bib}
