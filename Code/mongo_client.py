@@ -54,19 +54,35 @@ class CovidClient:
             return e
 
     def get_worst_day_country(self, country):
-        pass
+        try:
+            data = self.__collection.find({"countriesAndTerritories": country}, {"deaths", "dateRep"})
+            deaths = None
+            date = None
 
-    def get_worst_day_continent(self, continent):
-        pass
+            for x in data:
+                if deaths is None:
+                    deaths = int(x['deaths'])
+                    date = x['dateRep']
+                else:
+                    if int(x['deaths']) > deaths:
+                        deaths = int(x['deaths'])
+                        date = x['dateRep']
+
+            return date, deaths
+        except Exception as e:
+            return e
 
     def get_worst_month_country(self, country):
-        pass
-
-    def get_worst_month_continent(self, continent):
         pass
 
     def get_total_deaths(self):
         pass
 
     def get_total_cases(self):
+        pass
+
+    def get_data_date_country(self, country, date):
+        pass
+
+    def get_data_date_continent(self, continent, date):
         pass
