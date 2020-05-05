@@ -21,7 +21,7 @@ class CovidClient:
         try:
             data = self.__collection.find({"continentExp": continent}, {"deaths"})
             deaths = 0
-            
+
             for x in data:
                 deaths += int(x['deaths'])
 
@@ -30,10 +30,28 @@ class CovidClient:
             return e
 
     def get_total_cases_country(self, country):
-        pass
+        try:
+            data = self.__collection.find({"countriesAndTerritories": country}, {"cases"})
+            cases = 0
+
+            for x in data:
+                cases += int(x['cases'])
+
+            return cases
+        except Exception as e:
+            return e
 
     def get_total_cases_continent(self, continent):
-        pass
+        try:
+            data = self.__collection.find({"continentExp": continent}, {"cases"})
+            cases = 0
+
+            for x in data:
+                cases += int(x['cases'])
+
+            return cases
+        except Exception as e:
+            return e
 
     def get_worst_day_country(self, country):
         pass
