@@ -85,7 +85,16 @@ class CovidClient:
             return e
 
     def get_total_cases(self):
-        pass
+        try:
+            data = self.__collection.find({}, {"cases"})
+            cases = 0
+
+            for x in data:
+                cases += int(x['cases'])
+
+            return cases
+        except Exception as e:
+            return e
 
     def get_data_date_country(self, country, date):
         pass
