@@ -72,11 +72,17 @@ class CovidClient:
         except Exception as e:
             return e
 
-    def get_worst_month_country(self, country):
-        pass
-
     def get_total_deaths(self):
-        pass
+        try:
+            data = self.__collection.find({}, {"deaths"})
+            deaths = 0
+
+            for x in data:
+                deaths += int(x['deaths'])
+
+            return deaths
+        except Exception as e:
+            return e
 
     def get_total_cases(self):
         pass
