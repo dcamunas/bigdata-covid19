@@ -3,12 +3,7 @@ import wget
 import os
 from pymongo import MongoClient
 
-connection = 'mongodb://'+str(os.sys.argv[1])+':27017/'
 url = 'https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx'
-
-client = MongoClient(connection)
-database = client['covid']
-collection = database['Worldwide']
 
 
 def excel_to_json():
@@ -17,6 +12,11 @@ def excel_to_json():
     os.remove(filename)
     return data.to_dict('records')
 
+def upload_data(ip):
+    connection = 'mongodb://'+ip+':27017/'
+    client = MongoClient(connection)
+    database = client['covid']
+    collection = database['Worldwide']
 
-collection.delete_many({})
-collection.insert_many(excel_to_json())
+    collection.delete_many({})
+    collection.insert_many(excel_to_json())
