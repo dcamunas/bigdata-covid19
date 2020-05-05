@@ -96,11 +96,25 @@ class CovidClient:
         except Exception as e:
             return e
 
+    
     def get_data_date_country(self, country, date):
         try:
-            data = self.__collection.find({"countriesAndTerritories": country, "dateRep": date},
-                                          {"countriesAndTerritories", "cases", "deaths"})
+            day, month, year = parse_date(date)
+            data = self.__collection.find({"countriesAndTerritories": country, "day": day, "month": month, "year": year},{"countriesAndTerritories", "cases", "deaths"})
 
             return data[0]
         except Exception as e:
             return e
+
+
+    def parse_date(self, date):
+        date = date.split("/")
+        day = date[0]
+        month = date[1]
+        year = date[2]
+
+        return day, month, year
+    
+
+
+
