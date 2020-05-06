@@ -1,4 +1,14 @@
 from pymongo import MongoClient
+import datetime
+
+
+def parse_date(date):
+    date = date.split("/")
+    day = int(date[0])
+    month = int(date[1])
+    year = int(date[2])
+
+    return day, month, year
 
 
 class CovidClient:
@@ -96,25 +106,56 @@ class CovidClient:
         except Exception as e:
             return e
 
-    
     def get_data_date_country(self, country, date):
         try:
             day, month, year = parse_date(date)
-            data = self.__collection.find({"countriesAndTerritories": country, "day": day, "month": month, "year": year},{"countriesAndTerritories", "cases", "deaths"})
+            data = self.__collection.find(
+                {
+                    "countriesAndTerritories": country,
+                    "day": day,
+                    "month": month,
+                    "year": year
+                },
+                {"countriesAndTerritories", "cases", "deaths"}
+            )
 
-            return data[0]
+            return data
+        except Exception as e:
+            return e
+
+    def get_data_country(self, country):
+        try:
+            # only days with cases or deaths
+            data = self.__collection.find(
+                {
+                    "countriesAndTerritories": country,
+                    "$or": [
+                        {
+                            "cases": {
+                                "$gt": 0
+                            }
+                        },
+                        {
+                            "deaths": {
+                                "$gt": 0
+                            }
+                        }
+                    ]
+                },
+                {"countriesAndTerritories", "cases", "deaths", "dateRep"}
+            )
+
+            return data
         except Exception as e:
             return e
 
 
-    def parse_date(self, date):
-        date = date.split("/")
-        day = date[0]
-        month = date[1]
-        year = date[2]
+if __name__ == '__main__':
+    uri = "mongodb://bbddav:MwcC728FK1y98LrjmY0M4dop0SOA6ufv1PfmZ1QvW70gvnuJ4mqY9Lyr3pxdDEHCcqi3D6w2GZfYpujcHsZfpA" \
+          "==@bbddav.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000" \
+          "&appName=@bbddav@ "
+    client = CovidClient(uri, 'covid', 'Worldwide')
+    data = client.get_data_country('Spain')
 
-        return day, month, year
-    
-
-
-
+    for d in data:
+        print(d)
