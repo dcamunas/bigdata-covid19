@@ -12,11 +12,14 @@ def excel_to_json():
     os.remove(filename)
     return data.to_dict('records')
 
-def upload_data(ip):
-    connection = 'mongodb://'+ip+':27017/'
-    client = MongoClient(connection)
+def upload_data(uri):
+    #connection = 'mongodb://'+ip+':27017/'
+    client = MongoClient(uri)
     database = client['covid']
     collection = database['Worldwide']
 
-    collection.delete_many({})
+    #collection.delete_many({})
     collection.insert_many(excel_to_json())
+
+
+upload_data(os.argv[1])
