@@ -326,11 +326,237 @@ class CovidClient:
 
 Gracias a esta clase podremos realizar multitud de consultas interesantes a la base de datos, algunas de ellas las mostraremos a continuación.
 
-\subsection*{Ejemplos de consultas}
 \newpage
+\section*{Ejemplos de consultas}
+A continuación, se realizará una serie de consultas, las cuales hemos utilizado para llevar a cabo en el estudio de la pandemia. Cabe destacarr que estos datos han sido obtenidos el día \textit{\textbf{7 de Mayo del 2020}}.\\
+
+\subsection*{Total de casos confirmados}
+Para ello se ha utilizado la función \textit{\textbf{get-total-cases()}} \cite{jupyter} de la clase \textit{CovidClient}.
+
+\lstset{language=Python}
+\begin{lstlisting}
+	def get_total_cases(self):
+		try:
+			data = self.__collection.find({}, {"cases"})
+			cases = 0
+			
+			for x in data:
+			cases += int(x['cases'])
+			
+			return cases
+		except Exception as e:
+			return e
+\end{lstlisting}
+
+El \textbf{resultado} de la consulta sería el siguiente: \textbf{3623803} \textit{casos confirmados} en todo el mundo.
+
+
+\subsection*{Total de muertes confirmadas}
+Para ello se ha utilizado la función \textit{\textbf{get-total-deaths()}} \cite{jupyter} de la clase \textit{CovidClient}.
+
+\lstset{language=Python}
+\begin{lstlisting}
+	def get_total_deaths(self):
+		try:
+			data = self.__collection.find({}, {"deaths"})
+			deaths = 0
+	
+			for x in data:
+			deaths += int(x['deaths'])
+			
+			return deaths
+		except Exception as e:
+			return e
+\end{lstlisting}
+
+El \textbf{resultado} de la consulta sería el siguiente: \textbf{256880} \textit{muertes confirmadas} en el mundo.
+
+
+\newpage
+\subsection*{Casos confirmados en España el mes de Marzo}
+Para ello se ha utilizado la función \textit{\textbf{get-data-country()}} \cite{jupyter} de la clase \textit{CovidClient}.
+
+\lstset{language=Python}
+\begin{lstlisting}
+	data = client.get_data_country('Spain')
+	month = 3
+	cases = []
+	dates = []
+	
+	# Get data
+	for d in data:
+		date = d['dateRep']
+		if date.month == month:
+			cases.append(abs(d['cases']))
+			dates.append(date.strftime("%d/%m"))
+	
+	# Reverse data
+	cases = cases[::-1]
+	dates = dates[::-1]
+	y_pos = np.arange(len(dates))
+	plt.bar(y_pos, cases)
+	plt.xticks(y_pos, dates, rotation = 90)
+	plt.show()
+\end{lstlisting}
+
+El \textbf{resultado} de la consulta sería el diagrama de barras de la Figura \ref{fig:spain-march} recaudando dicha información.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\linewidth]{spain.png}
+	\caption{Casos en España mes de Marzo. \cite{jupyter}}
+	\label{fig:spain-march}
+\end{figure}
+
+
+\subsection*{Muertes en Italia en el mes de Abril}
+Para ello se ha utilizado la función \textit{\textbf{get-data-country()}} \cite{jupyter} de la clase \textit{CovidClient}.
+
+\lstset{language=Python}
+\begin{lstlisting}
+	data = client.get_data_country('Italy')
+	month = 4
+	deaths = []
+	dates = []
+	
+	for d in data:
+		date = d['dateRep']
+		if date.month == month:
+			deaths.append(abs(d['deaths']))
+			dates.append(date.strftime("%d/%m"))
+	
+	# Reverse data
+	deaths = deaths[::-1]
+	dates = dates[::-1]
+	y_pos = np.arange(len(deaths))
+	plt.bar(y_pos, deaths)
+	plt.xticks(y_pos, dates, rotation = 90)
+	plt.show()
+\end{lstlisting}
+
+El \textbf{resultado} de la consulta sería el diagrama de barras de la Figura \ref{fig:eeuu} recaudando dicha información.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\linewidth]{eeuu.png}
+	\caption{Muertes en Italia en el mes de Abril \cite{matplotlib}}
+	\label{fig:eeuu}
+\end{figure}
+
+
+\subsection*{Casos confirmados agrupados por meses en Italia}
+Para ello se ha utilizado la función \textit{\textbf{get-data-country()}} \cite{jupyter} de la clase \textit{CovidClient}.
+
+\lstset{language=Python}
+\begin{lstlisting}
+	data = client.get_data_country('Italy')
+	months = {1:0, 2:0, 3:0, 4:0, 5:0}
+	
+	for d in data:
+		months[d['dateRep'].month] += abs(d['cases'])
+	
+	y_pos = np.arange(len(months.values()))
+	plt.bar(y_pos, months.values())
+	plt.xticks(y_pos, months.keys())
+	plt.show()
+\end{lstlisting}
+
+El \textbf{resultado} de la consulta sería el diagrama de barras de la Figura \ref{fig:italy} recaudando dicha información.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\linewidth]{italy-months.png}
+	\caption{Casos confirmados agrupados por meses en Italia. \cite{matplotlib}}
+	\label{fig:italy}
+\end{figure}
+
+
+\subsection*{Porcentaje de casos en Estados Unidos respecto al resto del mundo}
+Para ello se ha utilizado la función \textit{\textbf{get-total-cases-country()}} y \textit{\textbf{get-total-cases()}} \cite{jupyter} de la clase \textit{CovidClient}.
+
+\lstset{language=Python}
+\begin{lstlisting}
+	country = "United_States_of_America"
+	country_cases = client.get_total_cases_country(country)
+	total_cases = client.get_total_cases() - country_cases
+	
+	values = [total_cases, country_cases]
+	names = ["Rest of world cases", (country.replace("_"," ") + "'s cases")]
+	plt.pie(values, labels=names, autopct="%0.2f %%")
+	plt.show()
+\end{lstlisting}
+
+El \textbf{resultado} de la consulta sería el diagrama de barras de la Figura \ref{fig:italy} recaudando dicha información.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=12cm]{eeuu-plait.png}
+	\caption{Porcentaje de casos en Estados Unidos respecto al resto del mundo. \cite{matplotlib}}
+	\label{fig:eeuu-plait}
+\end{figure}
 
 
 
+\subsection*{Porcentaje de casos de los tres países europeos más afectados}
+Para ello se ha utilizado la función \textit{\textbf{get-total-cases-country()}} y \textit{\textbf{get-total-cases-continent()}} \cite{jupyter} de la clase \textit{CovidClient}.
+
+\lstset{language=Python}
+\begin{lstlisting}
+	continent = "Europe"
+	country1 = "Spain"
+	country2 = "Italy"
+	country3 = "United_Kingdom"
+	
+	country1_cases = client.get_total_cases_country(country1)
+	country2_cases = client.get_total_cases_country(country2)
+	country3_cases = client.get_total_cases_country(country3)
+	continent_cases = client.get_total_cases_continent(continent) - (country1_cases - country2_cases - country3_cases)
+	
+	values = [continent_cases, country1_cases, country2_cases, country3_cases]
+	names = [("Rest of " + continent.replace("_", " ") + "'s cases"), (country1.replace("_"," ") + "'s cases"), (country2.replace("_"," ") + "'s cases"), (country3.replace("_"," ") + "'s cases")]
+	plt.pie(values, labels=names, autopct="%0.2f %%")
+	plt.show()
+\end{lstlisting}
+
+El \textbf{resultado} de la consulta sería el diagrama de barras de la Figura \ref{fig:italy} recaudando dicha información.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=12cm]{europe-plait.png}
+	\caption{Porcentaje de casos de los tres países europeos más afectados. \cite{matplotlib}}
+	\label{fig:europe-plait}
+\end{figure}
+
+
+\subsection*{Porcentaje de muertes de los tres países más afectados en el mundo}
+Para ello se ha utilizado la función \textit{\textbf{get-total-deaths-country()}} y \textit{\textbf{get-total-deaths()}} \cite{jupyter} de la clase \textit{CovidClient}.
+
+\lstset{language=Python}
+\begin{lstlisting}
+	country1 = "United_States_of_America"
+	country2 = "Spain"
+	country3 = "Italy"
+	country1_deaths = client.get_total_deaths_country(country1)
+	country2_deaths = client.get_total_deaths_country(country2)
+	country3_deaths = client.get_total_deaths_country(country3)
+	total_cases = client.get_total_deaths() - (country1_deaths - country2_deaths - country3_deaths)
+	
+	values = [total_cases, country1_deaths, country2_deaths, country3_deaths]
+	names = ["Rest of world deaths", (country1.replace("_"," ") + "'s deaths"), (country2.replace("_"," ") + "'s deaths"), (country3.replace("_", " ") + "'s deaths")]
+	plt.pie(values, labels=names, autopct="%0.2f %%")
+	plt.show()
+\end{lstlisting}
+
+El \textbf{resultado} de la consulta sería el diagrama de barras de la Figura \ref{fig:italy} recaudando dicha información.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=10cm]{world-plait.png}
+	\caption{Porcentaje de muertes de los tres países más afectados en el mundo. \cite{matplotlib}}
+	\label{fig:world-plait}
+\end{figure}
+
+\clearpage
 
 
 %Cras gravida, est vel interdum euismod, tortor mi lobortis mi, quis adipiscing elit lacus ut orci. Phasellus nec fringilla nisi, ut vestibulum neque. Aenean non risus eu nunc accumsan condimentum at sed ipsum.

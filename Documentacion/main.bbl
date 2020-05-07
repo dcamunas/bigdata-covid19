@@ -8,6 +8,14 @@
 \url{https://data.europa.eu/euodp/en/data/dataset/covid-19-coronavirus-data}.
 \newblock Eu open data portal.
 
+\bibitem{jupyter}
+\url{https://jupyter.org/}.
+\newblock Jupyter.
+
+\bibitem{matplotlib}
+\url{https://matplotlib.org/}.
+\newblock matplotlib.
+
 \bibitem{studio3t}
 \url{https://studio3t.com/}.
 \newblock Studio 3t.
