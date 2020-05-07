@@ -1,5 +1,4 @@
 from pymongo import MongoClient
-import datetime
 
 
 def parse_date(date):
@@ -148,14 +147,3 @@ class CovidClient:
             return data
         except Exception as e:
             return e
-
-
-if __name__ == '__main__':
-    uri = "mongodb://bbddav:MwcC728FK1y98LrjmY0M4dop0SOA6ufv1PfmZ1QvW70gvnuJ4mqY9Lyr3pxdDEHCcqi3D6w2GZfYpujcHsZfpA" \
-          "==@bbddav.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000" \
-          "&appName=@bbddav@ "
-    client = CovidClient(uri, 'covid', 'Worldwide')
-    data = client.get_data_country('Spain')
-
-    for d in data:
-        print(d)
