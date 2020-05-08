@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.26)  7 APR 2020 17:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.26)  8 MAY 2020 18:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -651,13 +651,6 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 
 ]
 chapter without number
-
-Overfull \hbox (5.86066pt too wide) in paragraph at lines 145--146
-[]\OT1/cmr/m/n/10.95 Los datos ex-trai-dos en for-mato \OT1/cmr/m/it/10.95 XML 
-\OT1/cmr/m/n/10.95 ha sido al-ma-ce-na-dos en el fichero \OT1/cmr/m/it/10.95 De
-portes-Salud.xml\OT1/cmr/m/n/10.95 . 
- []
-
 [2
 
 ]
@@ -678,21 +671,21 @@ chapter without number
 
 ]
 chapter without number
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 306.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 294.
 [7
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 306.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 294.
  (./lab_book_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 306.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 306.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 294.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 294.
 Package rerunfilecheck Info: File `lab_book_1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 306.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 294.
  ) 
 Here is how much of TeX's memory you used:
  17678 strings out of 492616
- 326223 string characters out of 6129481
+ 326236 string characters out of 6129481
  662080 words of memory out of 5000000
  21476 multiletter control sequences out of 15000+600000
  538783 words of font info for 45 fonts, out of 8000000 for 9000
@@ -706,7 +699,7 @@ usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></u
 sr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on lab_book_1.pdf (11 pages, 111744 bytes).
+Output written on lab_book_1.pdf (11 pages, 102140 bytes).
 PDF statistics:
  173 PDF objects out of 1000 (max. 8388607)
  150 compressed objects within 2 object streams
