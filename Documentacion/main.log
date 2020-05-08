@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.10)  7 MAY 2020 20:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.10)  7 MAY 2020 22:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -813,33 +813,30 @@ Package pdftex.def Info: Figures/eeuu.png  used on input line 441.
 File: Figures/italy-months.png Graphic file (type png)
 <use Figures/italy-months.png>
 Package pdftex.def Info: Figures/italy-months.png  used on input line 468.
-(pdftex.def)             Requested size: 369.88583pt x 233.3334pt.
+(pdftex.def)             Requested size: 284.52756pt x 179.48943pt.
 <Figures/eeuu-plait.png, id=50, 465.74pt x 291.0875pt>
 File: Figures/eeuu-plait.png Graphic file (type png)
 <use Figures/eeuu-plait.png>
 Package pdftex.def Info: Figures/eeuu-plait.png  used on input line 493.
-(pdftex.def)             Requested size: 341.43306pt x 213.40263pt.
+(pdftex.def)             Requested size: 256.0748pt x 160.04974pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[12 <./Figures/italy-months.png>]
-<Figures/europe-plait.png, id=55, 500.87125pt x 291.0875pt>
+[12 <./Figures/italy-months.png>] [13 <./Figures/eeuu-plait.png>]
+<Figures/europe-plait.png, id=60, 500.87125pt x 291.0875pt>
 File: Figures/europe-plait.png Graphic file (type png)
 <use Figures/europe-plait.png>
-Package pdftex.def Info: Figures/europe-plait.png  used on input line 525.
-(pdftex.def)             Requested size: 341.43306pt x 198.43433pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[13 <./Figures/eeuu-plait.png>]
+Package pdftex.def Info: Figures/europe-plait.png  used on input line 526.
+(pdftex.def)             Requested size: 241.84842pt x 140.55544pt.
 <Figures/world-plait.png, id=61, 419.5675pt x 291.0875pt>
 File: Figures/world-plait.png Graphic file (type png)
 <use Figures/world-plait.png>
-Package pdftex.def Info: Figures/world-plait.png  used on input line 554.
-(pdftex.def)             Requested size: 284.52756pt x 197.39943pt.
- [14 <./Figures/europe-plait.png> <./Figures/world-plait.png>] (./main.bbl
+Package pdftex.def Info: Figures/world-plait.png  used on input line 555.
+(pdftex.def)             Requested size: 227.62204pt x 157.91777pt.
+ [14
+
+ <./Figures/europe-plait.png> <./Figures/world-plait.png>] (./main.bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
@@ -868,7 +865,7 @@ Here is how much of TeX's memory you used:
  11091 multiletter control sequences out of 15000+600000
  46881 words of font info for 183 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,45p,717b,1736s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,45p,717b,1732s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texli
 ve/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-sup
@@ -876,7 +873,7 @@ er/sftt1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (15 pages, 268925 bytes).
+Output written on main.pdf (15 pages, 269119 bytes).
 PDF statistics:
  94 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream
