@@ -88,9 +88,9 @@
 \HRule \\[1.5cm]
 \end{center}
 }
-\author{\Huge Mario Pérez Sánchez-Montañez \\ \\ \Huge David Camuñas Sánchez \\ \\[2cm]} % Your name and email address
+\author{\Huge Mario Pérez Sánchez-Montañez \\ \\ \Huge David Camuñas Sánchez \\ \\ \Huge Franccesco Zingarello \\ \\[2cm]} % Your name and email address
 %\date{Beginning 6 February 2012} % Beginning date
-\date{14 de Abril de 2020}
+\date{\today}
 \maketitle
 
 \tableofcontents
@@ -116,15 +116,12 @@
 %Text
 
 %----------------------------------------------------------------------------------------
-\labday{Miércoles, 1 de Abril}
+\labday{Lunes, 27 de Abril}
 \experiment{Elección de la tecnologías}
 \begin{itemize}
-	\item Se ha decidido utilizar a herramienta \textbf{\textit{Liquid Studio}}, como tecnología de creación del \textbf{XML schema} con extensión \textit{XSD}.
+	\item Como herramienta de almacenamiento de nuestra BD hemos utilizado \textbf{\textit{Azure Cosmos DB}}.
 	
-	\item  Además para obtener las distintas categorías del fichero de tamaño de 12 GB dado como material a utilizar, se ha utilizado un \textit{Script} en lenguaje \textit{\textbf{Java}} (Se puede ver en 
-	la carpeta del proyecto).
-	
-	\item  Como motor y gestor de nuestra Base de Datos (BD), hemos utilizado la aplicación \textbf{BaseX\textit{}}.
+	\item  Como motor y gestor de nuestra Base de Datos (BD), hemos utilizado la aplicación \textbf{MongoDB}.
 	
 	\item  Por último cabe de decir, que para la generación de la \textit{memoria} del proyecto y de este documento (\textit{)Lab-Book}, se ha utilizado la herramienta \textit{\textbf{Latex}}.
 	
@@ -132,40 +129,31 @@
 \end{itemize}
 
 
-\labday{Viernes, 3 de Abril}
+\labday{Miercoles, 29 de Abril}
 \experiment{Obtención de las categorías elegidas}
-Mediante el \textbf{Script} en lenguaje de \textit{Java}, se han extraido las categorías elegidas en este caso, han sido: 
-
-\begin{itemize}
-	\item \textbf{\textit{Deportes}}.
-	\item \textbf{\textit{Salud}}.
-	\item \textbf{\textit{Salud y Belleza}}.
-\end{itemize}
-
- Los datos extraidos en formato \textit{XML} ha sido almacenados en el fichero \textit{Deportes-Salud.xml}.
+Se ha elegido como tema de estudio, el efecto del coronavirus en el mundo, a nivel sanitario
 
 
-\labday{Martes, 7 de Abril}
-\experiment{Generación del Schema (XSD)}
-Se ha realizado la generación del \textit{schema XSD}, donde se define la estructura que contiene nuestra BD además de los distintos tipos de elementos que la forman. Este esquema o estructura se ha guardado en el archivo que aparece en la carpeta del proyecto con la extensión \textit{\textbf{XSD}}.
+\labday{Viernes, 30 de Abril}
+\experiment{Elección de la fuente de datos}
+Se ha decido obtener los datos de la pagina oficial de la unión europea, en su sección del avance del Covid-19. Dado que tras haber evaluado otras opciones, esta nos ha resultado la mejor opción.
 
-\labday{Miércoles, 8 de Abril}
-\experiment{Generación archivo XSLT}
-Se ha realizado un ejemplo básico de un nodo de nuestra BD, en este caso, una pregunta, y a partir de este nodo u elemento se ha contruido su estructura en formato \textit{XSLT}.
-Para ello se ha tenido que pasar del formato \textit{XML} a \textit{XSLT}, y mas tarde mostrar este \textit{XSLT} en formato \textit{HTML}, para poder asi abrirlo con nuestro buscador por defecto.
+\labday{Lunes, 4 de Mayo}
+\experiment{Descubrimiento de Jupyter Notebook}
+Tras estudiar las herramientas a utilizar, hemos decido añadir, el lenguaje Python, y Jupyter Notebook, para la btención de los distintos gráficos y llevar a cabo el estudio.
 
 
-\labday{Jueves, 9 de Abril}
+\labday{Martes, 5 de Mayo}
 \experiment{Creación de la base datos}
-Con la herramienta \textit{\textbf{BaseX}} se ha generado \textit{nuestra BD}. Esta se puede encontrar en la carpeta del proyecto, en el archivo \textit{Deportes-Salud-BD.zip}. Este contiene la BD la cual esta formada por los archivos de extensión de la herramienta además del archivo \textit{Deportes-Salud.xml}. Los archivos generados por la herramienta son necesarios para poder llevar a cabo el manejo de los datos.
+Se han almacenado los datos, en la base de datos de Azure Cosmos DB (en la nube). Esta opción la hemos elegido debido a que podemos acceder así a nuestra BD desde cualquier parte.
 
 
-\labday{Viernes, 10  de Abril}
+\labday{Miercoles, 6  de Mayo}
 \experiment{Generación de consultas}
-Se han generado una serie de consultas (\textit{)Xquery} a nuestra BD, para ello se ha generado el lenguaje de consultas de XML. Se puede apreciar que hay distintas consultas, unas con la utilización del bucle \textit{For} y otras más básicas. Estas consultas serán utilizadas como ejemplo para poder observar el funcionamiento de la BD del tipo no relacional, en nuestro caso de tipo \textbf{XML}.
+Se han realizado los distintos tipos de consultas. junto con la conexión del cliente Covid-Client en lenguaje python.
 
 
-\labday{Lunes, 13 de Abril}
+\labday{Jueves, 7 de Mayo}
 \experiment{Generación de la memoria y de la presentación}
 \begin{itemize}
 	\item Para crear la memoria del proyecto, el equipo de trabajo a utilizado la herramienta \textit{\textbf{Latex}} (al igual que para la creación de este propio documento).
