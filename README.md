@@ -51,7 +51,7 @@ values = [ total_cases , country_cases]
 7 plt .pie(values, labels=names, autopct=" %0.2f %%")
 8 plt .show()
 ````
-En esta consulta, el resultado de la consulta sería la siguiente distribución de tipo '*pastel*' recaudando dicha información.
+En esta consulta, el resultado de la consulta sería la siguiente distribución de tipo '*pastel*' recaudando dicha información.  
 ![datos_eeuu](Documentacion/Figures/eeuu-plait.png)
 
 
