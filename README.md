@@ -22,8 +22,8 @@ Estas consultas se han llevado a cabo en *Jupyter Notebook* (haciendo uso de len
 2 month = 3
 3 cases = []
 4 dates = []
-56
-# Get data
+5
+6 # Get data
 7 for d in data:
 8 date = d[’dateRep’]
 9 if date.month == month:
@@ -45,11 +45,11 @@ En este caso, el resultado de la consulta sería el siguinte  diagrama de barras
 ````
 1 country = "United_States_of_America"
 2 country_cases = client .get_total_cases_country(country)
-3 total_cases = client . get_total_cases () − country_cases 45
-values = [ total_cases , country_cases]
-6 names = ["Rest of world cases", (country.replace("_"," ") + " ’s cases")]
-7 plt .pie(values, labels=names, autopct=" %0.2f %%")
-8 plt .show()
+3 total_cases = client . get_total_cases () − country_cases
+4 values = [ total_cases , country_cases]
+5 names = ["Rest of world cases", (country.replace("_"," ") + " ’s cases")]
+6 plt .pie(values, labels=names, autopct=" %0.2f %%")
+7 plt .show()
 ````
 En esta consulta, el resultado de la consulta sería la siguiente distribución de tipo '*pastel*' recaudando dicha información.  
 ![datos_eeuu](Documentacion/Figures/eeuu-plait.png)
